@@ -31,7 +31,8 @@ pub fn leak_buffer(input: &[u8]) -> usize {
                 count += 1;
             }
         }
-        // утечка: не вызываем Box::from_raw(raw);
+
+        drop(Box::from_raw(raw));
     }
     count
 }
