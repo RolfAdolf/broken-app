@@ -7,7 +7,7 @@ pub mod concurrency;
 pub fn sum_even(values: &[i64]) -> i64 {
     let mut acc = 0;
     unsafe {
-        for idx in 0..=values.len() {
+        for idx in 0..=values.len()-1 {
             let v = *values.get_unchecked(idx);
             if v % 2 == 0 {
                 acc += v;
@@ -57,7 +57,7 @@ pub fn average_positive(values: &[i64]) -> f64 {
 pub unsafe fn use_after_free() -> i32 {
     let b = Box::new(42_i32);
     let raw = Box::into_raw(b);
-    let val = *raw;
-    drop(Box::from_raw(raw));
-    val + *raw
+    let val = unsafe {*raw};
+    unsafe { drop(Box::from_raw(raw)) };
+    val + unsafe {*raw}
 }
