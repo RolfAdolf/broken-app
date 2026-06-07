@@ -6,8 +6,18 @@ edition = "2024"
 [dependencies]
 
 [dev-dependencies]
-criterion = "0.5"
+criterion = { version = "0.5", features = ["html_reports", "csv_output"] }
 
 [[bench]]
 name = "baseline"
 harness = false
+
+[[bench]]
+name = "criterion"
+harness = false
+
+[profile.bench]
+debug = true
+
+[profile.release]
+debug = true
