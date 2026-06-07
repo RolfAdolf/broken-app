@@ -6,7 +6,7 @@ pub fn sum_even(values: &[i64]) -> i64 {
 }
 
 pub fn leak_buffer(input: &[u8]) -> usize {
-    input.iter().filter(|&&b| b != 0).count()
+    input.iter().filter(|b| **b != 0).count()
 }
 
 pub fn normalize(input: &str) -> String {
