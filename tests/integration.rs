@@ -72,7 +72,6 @@ fn normalize_mixed_case() {
 #[test]
 fn averages_only_positive() {
     let nums = [-5, 5, 15];
-    // Ожидается (5 + 15) / 2 = 10, но текущая реализация делит на все элементы.
     assert!((broken_app::average_positive(&nums) - 10.0).abs() < f64::EPSILON);
 }
 

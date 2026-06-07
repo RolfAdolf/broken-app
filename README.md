@@ -1,3 +1,6 @@
+### Ссылка на reference-app:
+https://code.s3.yandex.net/middle-rust-blockchain/reference-app.zip
+
 ### Шаг 4. Поиск узких мест
 
 <img height="500" src="../broken-app/images/img.png" width="1000"/>
@@ -40,6 +43,34 @@ pub fn slow_fib(n: u64) -> u64 {
 }
 ```
 
+### Оптимизации и регрессионные тесты
+
+#### Что исправлено
+
+| Модуль | Было | Стало |
+|--------|------|-------|
+| `sum_even` | `unsafe` `get_unchecked`, риск UB | безопасный `iter().filter().sum()`, 0 alloc |
+| `leak_buffer` | `to_vec` (1 MiB) + утечка через `Box::into_raw` | подсчёт по срезу, 0 alloc |
+| `normalize` | `replace(' ')` — только пробелы | `split_whitespace` + `to_lowercase`, табы/переносы |
+| `average_positive` | среднее по **всем** элементам | только по `is_positive()`, ноль не в знаменателе |
+| `slow_dedup` | O(n²) + `sort` на каждой вставке | O(n) `HashSet` + один `sort` |
+| `slow_fib` | рекурсия O(2ⁿ) | цикл O(n), без стека вызовов |
+| `race_increment` | `static mut`, data race | `AtomicU64` + `fetch_add` |
+
+`use_after_free` намеренно оставлен как демо UB — в тестах не вызывается.
+
+#### Регрессионные тесты (`tests/integration.rs`)
+
+| Группа | Тесты | Что ловят |
+|--------|-------|-----------|
+| `sum_even` | `sums_even_numbers`, `sum_even_empty_slice`, `sum_even_no_evens`, `sum_even_includes_negative_evens` | корректная сумма, граничные случаи, отрицательные чётные |
+| `leak_buffer` | `counts_non_zero_bytes`, `leak_buffer_all_non_zero` | подсчёт без лишних аллокаций |
+| `normalize` | `normalize_simple`, `normalize_empty_string`, `normalize_collapses_multiple_spaces`, `normalize_splits_on_tabs_and_newlines`, `normalize_mixed_case` | схлопывание whitespace, регистр, пустая строка |
+| `average_positive` | `averages_only_positive`, `average_positive_empty_slice`, `average_positive_all_negative`, `average_positive_zero_not_counted` | деление только на положительные; 0 → `0.0` |
+| `algo` | `dedup_preserves_uniques`, `fib_small_numbers` | порядок dedup, `fib(10) == 55` |
+
+Запуск: `cargo test --test integration` (см. [artifacts/test.txt](artifacts/test.txt)).
+
 ### Шаг 7. Проверка «после»
 
 Источник: `artifacts/benches/before_criterion` → baseline `before`, финальный прогон → `artifacts/benches/after_criterion`.  
@@ -57,6 +88,23 @@ pub fn slow_fib(n: u64) -> u64 {
 | `leak_buffer` | 160 µs | 321 µs | ×0.50 | +99% ⚠ |
 
 ⚠ `normalize` / `leak_buffer`: в baseline «до» уже были частично исправленные версии; сравнение с полностью корректным кодом даёт видимую «регрессию» по времени, но не по аллокациям (см. ниже).
+
+#### Логи и отчёты прогонов
+
+| Проверка | Лог / отчёт |
+|----------|-------------|
+| `cargo test` | [artifacts/test.txt](artifacts/test.txt) |
+| `cargo +nightly miri test` | [artifacts/miri.txt](artifacts/miri.txt) |
+| Valgrind `--leak-check=full` (Docker) | [artifacts/valgrind.txt](artifacts/valgrind.txt) |
+| ASan | [artifacts/asan.txt](artifacts/asan.txt) |
+| TSan | [artifacts/tsan.txt](artifacts/tsan.txt) |
+| `cargo bench` — текст «до» | [artifacts/benches/baseline_before.txt](artifacts/benches/baseline_before.txt) |
+| `cargo bench` — текст «после» | [artifacts/benches/baseline_after.txt](artifacts/benches/baseline_after.txt) |
+| `cargo bench` — HTML «до» | [artifacts/benches/before_criterion/report/index.html](artifacts/benches/before_criterion/report/index.html) |
+| `cargo bench` — HTML «после» | [artifacts/benches/after_criterion/criterion/report/index.html](artifacts/benches/after_criterion/criterion/report/index.html) |
+| Valgrind DHAT / heap «до» | [artifacts/dhat_before.out](artifacts/dhat_before.out) → [DHAT viewer](https://nnethercote.github.io/dh_view/dh_view.html) |
+| Valgrind DHAT / heap «после» | [artifacts/dhat.out](artifacts/dhat.out) → [DHAT viewer](https://nnethercote.github.io/dh_view/dh_view.html) |
+| Valgrind Massif (пик heap) | [artifacts/massif.out](artifacts/massif.out) |
 
 #### Как воспроизвести
 
