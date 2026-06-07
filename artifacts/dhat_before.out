@@ -1,0 +1,168 @@
+{"dhatFileVersion":2
+,"mode":"heap","verb":"Allocated"
+,"bklt":true,"bkacc":true
+,"tu":"instrs","Mtu":"Minstr"
+,"tuth":500
+,"cmd":"./target/release/demo"
+,"pid":1
+,"te":506942
+,"tg":183063
+,"pps":
+ [{"tb":472,"tbk":1
+  ,"tl":134121
+  ,"mb":472,"mbk":1
+  ,"gb":472,"gbk":1
+  ,"eb":0,"ebk":0
+  ,"rb":2632,"wb":1191
+  ,"acc":[-4,174,-4,1,-8,159,-8,72,-8,10,-8,14,-16,10,-8,19,-8,7,-8,3,-8,7,-8,1,-8,7,-8,3,-4,22,-3,12,9,-8,0,-2,1,-6,0,-8,4,-8,6,-8,0,-16,1,-8,0,-8,2,-4,8,-20,0,-8,13,-4,4,-4,3,-8,5,-88,1,-136,0,-8,1]
+  ,"fs":[1,2,3,4]
+  }
+ ,{"tb":360,"tbk":2
+  ,"tl":133166
+  ,"mb":240,"mbk":1
+  ,"gb":240,"gbk":1
+  ,"eb":0,"ebk":0
+  ,"rb":4902,"wb":3808
+  ,"fs":[5,6,3,4]
+  }
+ ,{"tb":1024,"tbk":1
+  ,"tl":133242
+  ,"mb":1024,"mbk":1
+  ,"gb":1024,"gbk":1
+  ,"eb":0,"ebk":0
+  ,"rb":7296,"wb":3807
+  ,"acc":[16,-573,12,-161,10,-289,9]
+  ,"fs":[7,8,9,10,11,6,3,4]
+  }
+ ,{"tb":32,"tbk":1
+  ,"tl":311
+  ,"mb":0,"mbk":0
+  ,"gb":0,"gbk":0
+  ,"eb":0,"ebk":0
+  ,"rb":32,"wb":96
+  ,"acc":[-8,2,-8,4,-8,6,-8,4]
+  ,"fs":[12,3,4]
+  }
+ ,{"tb":152,"tbk":1
+  ,"tl":326
+  ,"mb":0,"mbk":0
+  ,"gb":0,"gbk":0
+  ,"eb":0,"ebk":0
+  ,"rb":24,"wb":16
+  ,"acc":[-8,3,-8,2,-136,0]
+  ,"fs":[13,14,15,3,4]
+  }
+ ,{"tb":32,"tbk":1
+  ,"tl":228
+  ,"mb":0,"mbk":0
+  ,"gb":0,"gbk":0
+  ,"eb":0,"ebk":0
+  ,"rb":0,"wb":32
+  ,"acc":[-32,1]
+  ,"fs":[16,15,3,4]
+  }
+ ,{"tb":4,"tbk":1
+  ,"tl":191323
+  ,"mb":0,"mbk":0
+  ,"gb":0,"gbk":0
+  ,"eb":0,"ebk":0
+  ,"rb":0,"wb":4
+  ,"acc":[-4,1]
+  ,"fs":[17,18,4]
+  }
+ ,{"tb":544,"tbk":1
+  ,"tl":199886
+  ,"mb":0,"mbk":0
+  ,"gb":0,"gbk":0
+  ,"eb":544,"ebk":1
+  ,"rb":76,"wb":60
+  ,"acc":[-16,3,-80,0,-40,2,-402,0,-2,4,-4,0]
+  ,"fs":[19,18,4]
+  }
+ ,{"tb":1024,"tbk":1
+  ,"tl":190213
+  ,"mb":0,"mbk":0
+  ,"gb":0,"gbk":0
+  ,"eb":0,"ebk":0
+  ,"rb":99,"wb":86
+  ,"acc":[-6,10,-2,11,12,11,12,11,8,9,-4,7,-2,4,-2,2,-1002,0]
+  ,"fs":[20,21,22,23,24,25,26,27,4]
+  }
+ ,{"tb":4,"tbk":1
+  ,"tl":198296
+  ,"mb":0,"mbk":0
+  ,"gb":0,"gbk":0
+  ,"eb":4,"ebk":1
+  ,"rb":4,"wb":4
+  ,"acc":[-4,2]
+  ,"fs":[28,29,25,26,27,4]
+  }
+ ,{"tb":24,"tbk":2
+  ,"tl":694
+  ,"mb":0,"mbk":0
+  ,"gb":0,"gbk":0
+  ,"eb":0,"ebk":0
+  ,"rb":18,"wb":18
+  ,"fs":[30,31,32,33,25,26,27,4]
+  }
+ ,{"tb":10,"tbk":1
+  ,"tl":1255
+  ,"mb":0,"mbk":0
+  ,"gb":0,"gbk":0
+  ,"eb":0,"ebk":0
+  ,"rb":20,"wb":10
+  ,"acc":[-10,3]
+  ,"fs":[34,35,33,25,26,27,4]
+  }
+ ,{"tb":32,"tbk":1
+  ,"tl":3040
+  ,"mb":0,"mbk":0
+  ,"gb":0,"gbk":0
+  ,"eb":0,"ebk":0
+  ,"rb":232,"wb":32
+  ,"acc":[-16,11,-8,7,-8,4]
+  ,"fs":[30,36,37,38,25,26,27,4]
+  }
+ ]
+,"ftbl":
+ ["[root]"
+ ,"0x496F94F: __fopen_internal (iofopen.c:65)"
+ ,"0x498727F: pthread_getattr_np@@GLIBC_2.32 (pthread_getattr_np.c:85)"
+ ,"0x12C567: std::rt::lang_start_internal (in /app/target/release/demo)"
+ ,"0x110B5F: main (in /app/target/release/demo)"
+ ,"0x4970A1F: getdelim (iogetdelim.c:65)"
+ ,"0x4987393: pthread_getattr_np@@GLIBC_2.32 (pthread_getattr_np.c:122)"
+ ,"0x496EC87: _IO_file_doallocate (filedoalloc.c:101)"
+ ,"0x497F6A7: _IO_doallocbuf (genops.c:373)"
+ ,"0x497F6A7: _IO_doallocbuf (genops.c:368)"
+ ,"0x497D4FF: _IO_file_underflow@@GLIBC_2.17 (fileops.c:487)"
+ ,"0x4970A8B: getdelim (iogetdelim.c:77)"
+ ,"0x4987153: pthread_getattr_np@@GLIBC_2.32 (pthread_getattr_np.c:180)"
+ ,"0x49839DB: __pthread_attr_extension (pthread_attr_extension.c:28)"
+ ,"0x4983D7B: pthread_attr_setaffinity_np@@GLIBC_2.32 (pthread_attr_setaffinity.c:45)"
+ ,"0x49871FF: pthread_getattr_np@@GLIBC_2.32 (pthread_getattr_np.c:194)"
+ ,"0x4983D97: pthread_attr_setaffinity_np@@GLIBC_2.32 (pthread_attr_setaffinity.c:51)"
+ ,"0x12F04F: std::sys::pal::unix::stack_overflow::thread_info::set_current_info (in /app/target/release/demo)"
+ ,"0x12C657: std::rt::lang_start_internal (in /app/target/release/demo)"
+ ,"0x12F22B: std::sys::pal::unix::stack_overflow::thread_info::set_current_info (in /app/target/release/demo)"
+ ,"0x11F437: <std::sync::once::Once>::call_once_force::<<std::sync::once_lock::OnceLock<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>>>::initialize<<std::sync::once_lock::OnceLock<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>>>::get_or_init<std::io::stdio::stdout::{closure#0}>::{closure#0}, !>::{closure#0}>::{closure#0} (in /app/target/release/demo)"
+ ,"0x10F7F3: <std::sys::sync::once::futex::Once>::call (in /app/target/release/demo)"
+ ,"0x10C277: <std::sync::once_lock::OnceLock<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>>>::initialize::<<std::sync::once_lock::OnceLock<std::sync::reentrant_lock::ReentrantLock<core::cell::RefCell<std::io::buffered::linewriter::LineWriter<std::io::stdio::StdoutRaw>>>>>::get_or_init<std::io::stdio::stdout::{closure#0}>::{closure#0}, !> (in /app/target/release/demo)"
+ ,"0x12D6F3: std::io::stdio::_print (in /app/target/release/demo)"
+ ,"0x110977: demo::main (in /app/target/release/demo)"
+ ,"0x1108E3: std::sys::backtrace::__rust_begin_short_backtrace (in /app/target/release/demo)"
+ ,"0x1108CB: std::rt::lang_start::{{closure}} (in /app/target/release/demo)"
+ ,"0x12C71B: std::rt::lang_start_internal (in /app/target/release/demo)"
+ ,"0x110BAF: broken_app::leak_buffer (in /app/target/release/demo)"
+ ,"0x11098F: demo::main (in /app/target/release/demo)"
+ ,"0x10C15F: alloc::raw_vec::RawVecInner<A>::finish_grow (in /app/target/release/demo)"
+ ,"0x10C207: alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle (in /app/target/release/demo)"
+ ,"0x110FFB: broken_app::normalize (in /app/target/release/demo)"
+ ,"0x1109C7: demo::main (in /app/target/release/demo)"
+ ,"0x13ED7F: <str>::to_lowercase (in /app/target/release/demo)"
+ ,"0x111057: broken_app::normalize (in /app/target/release/demo)"
+ ,"0x10C0BB: alloc::raw_vec::RawVec<T,A>::grow_one (in /app/target/release/demo)"
+ ,"0x111B67: broken_app::algo::slow_dedup (in /app/target/release/demo)"
+ ,"0x110A3B: demo::main (in /app/target/release/demo)"
+ ]
+}
