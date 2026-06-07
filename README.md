@@ -3,7 +3,7 @@ https://code.s3.yandex.net/middle-rust-blockchain/reference-app.zip
 
 ### Шаг 4. Поиск узких мест
 
-<img height="500" src="../broken-app/images/img.png" width="1000"/>
+<img height="500" src="./images/img.png" width="1000"/>
 
 #### `broken_app::slow_dedup`
 
