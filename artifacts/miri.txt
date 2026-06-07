@@ -1,0 +1,24 @@
+nadir@Nadirs-MacBook-Air broken-app % cargo +nightly miri test --test integration
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.12s
+     Running tests/integration.rs (target/miri/aarch64-apple-darwin/debug/deps/integration-2702d5a2611901e5)
+
+running 17 tests
+test average_positive_all_negative ... ok
+test average_positive_empty_slice ... ok
+test average_positive_zero_not_counted ... ok
+test averages_only_positive ... ok
+test counts_non_zero_bytes ... ok
+test dedup_preserves_uniques ... ok
+test fib_small_numbers ... ok
+test leak_buffer_all_non_zero ... ok
+test normalize_collapses_multiple_spaces ... ok
+test normalize_empty_string ... ok
+test normalize_mixed_case ... ok
+test normalize_simple ... ok
+test normalize_splits_on_tabs_and_newlines ... ok
+test sum_even_empty_slice ... ok
+test sum_even_includes_negative_evens ... ok
+test sum_even_no_evens ... ok
+test sums_even_numbers ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.09s

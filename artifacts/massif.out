@@ -1,0 +1,1733 @@
+desc: --massif-out-file=/app/artifacts/massif.out
+cmd: ./target/release/demo
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=20901474
+mem_heap_B=6754836
+mem_heap_extra_B=76
+mem_stacks_B=0
+heap_tree=peak
+n7: 6754836 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4000000 0x11135F: alloc (library/alloc/src/alloc.rs:101)
+  n1: 4000000 0x11135F: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 4000000 0x11135F: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 4000000 0x11135F: allocate (library/alloc/src/alloc.rs:449)
+     n1: 4000000 0x11135F: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 4000000 0x11135F: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 4000000 0x11135F: with_capacity_in<i64, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 4000000 0x11135F: with_capacity_in<i64, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 4000000 0x11135F: with_capacity<i64> (library/alloc/src/vec/mod.rs:524)
+          n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 4000000 0x11135F: collect<core::ops::range::Range<i64>, alloc::vec::Vec<i64, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 4000000 0x11135F: demo::main (demo.rs:4)
+               n1: 4000000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 4000000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 4000000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 4000000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 4000000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 4000000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 4000000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 4000000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 4000000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 4000000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 4000000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 4000000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 4000000 0x11194F: main (in /app/target/release/demo)
+ n1: 1000000 0x1113B7: alloc (library/alloc/src/alloc.rs:101)
+  n1: 1000000 0x1113B7: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 1000000 0x1113B7: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 1000000 0x1113B7: allocate (library/alloc/src/alloc.rs:449)
+     n1: 1000000 0x1113B7: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 1000000 0x1113B7: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 1000000 0x1113B7: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 1000000 0x1113B7: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 1000000 0x1113B7: with_capacity<u8> (library/alloc/src/vec/mod.rs:524)
+          n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 1000000 0x1113B7: collect<core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>, alloc::vec::Vec<u8, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 1000000 0x1113B7: demo::main (demo.rs:5)
+               n1: 1000000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 1000000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 1000000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 1000000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 1000000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 1000000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 1000000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 1000000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 1000000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 1000000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 1000000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 1000000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 1000000 0x11194F: main (in /app/target/release/demo)
+ n1: 650000 0x111407: alloc (library/alloc/src/alloc.rs:101)
+  n1: 650000 0x111407: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 650000 0x111407: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 650000 0x111407: allocate (library/alloc/src/alloc.rs:449)
+     n1: 650000 0x111407: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 650000 0x111407: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 650000 0x111407: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 650000 0x111407: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 650000 0x111407: with_capacity<u8> (library/alloc/src/vec/mod.rs:524)
+          n1: 650000 0x111407: repeat<u8> (library/alloc/src/slice.rs:524)
+           n1: 650000 0x111407: repeat (library/alloc/src/str.rs:530)
+            n1: 650000 0x111407: demo::main (demo.rs:6)
+             n1: 650000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+              n1: 650000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+               n1: 650000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                n1: 650000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                 n1: 650000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                  n1: 650000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                   n1: 650000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                    n1: 650000 0x12DC67: {closure#0} (rt.rs:175)
+                     n1: 650000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                      n1: 650000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                       n1: 650000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                        n1: 650000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                         n0: 650000 0x11194F: main (in /app/target/release/demo)
+ n1: 524288 0x10C3C3: realloc_nonnull (library/alloc/src/alloc.rs:155)
+  n1: 524288 0x10C3C3: grow_impl_runtime (library/alloc/src/alloc.rs:259)
+   n1: 524288 0x10C3C3: grow_impl (library/alloc/src/alloc.rs:362)
+    n1: 524288 0x10C3C3: grow (library/alloc/src/alloc.rs:474)
+     n1: 524288 0x10C3C3: alloc::raw_vec::RawVecInner<A>::finish_grow (library/alloc/src/raw_vec/mod.rs:556)
+      n1: 524288 0x10C487: grow_amortized<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:528)
+       n1: 524288 0x10C487: alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle (library/alloc/src/raw_vec/mod.rs:668)
+        n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/raw_vec/mod.rs:675)
+         n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/raw_vec/mod.rs:341)
+          n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/vec/mod.rs:1471)
+           n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/vec/mod.rs:2905)
+            n1: 524288 0x11224F: spec_extend<u8, alloc::alloc::Global> (library/alloc/src/vec/spec_extend.rs:56)
+             n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/vec/mod.rs:3526)
+              n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/string.rs:1102)
+               n1: 524288 0x11224F: {closure#0}<core::str::iter::SplitWhitespace> (library/alloc/src/string.rs:2525)
+                n1: 524288 0x11224F: {closure#0}<&str, alloc::string::{impl#18}::spec_extend_into::{closure_env#0}<core::str::iter::SplitWhitespace>> (library/core/src/iter/traits/iterator.rs:886)
+                 n1: 524288 0x11224F: fold<core::str::iter::SplitWhitespace, (), core::iter::traits::iterator::Iterator::for_each::call::{closure_env#0}<&str, alloc::string::{impl#18}::spec_extend_into::{closure_env#0}<core::str::iter::SplitWhitespace>>> (library/core/src/iter/traits/iterator.rs:2673)
+                  n1: 524288 0x11224F: for_each<core::str::iter::SplitWhitespace, alloc::string::{impl#18}::spec_extend_into::{closure_env#0}<core::str::iter::SplitWhitespace>> (library/core/src/iter/traits/iterator.rs:889)
+                   n1: 524288 0x11224F: <T as alloc::string::SpecExtendStr>::spec_extend_into (library/alloc/src/string.rs:2525)
+                    n1: 524288 0x112BCF: UnknownInlinedFun (library/alloc/src/string.rs:2508)
+                     n1: 524288 0x112BCF: UnknownInlinedFun (library/alloc/src/string.rs:2389)
+                      n1: 524288 0x112BCF: collect<core::str::iter::SplitWhitespace, alloc::string::String> (library/core/src/iter/traits/iterator.rs:2092)
+                       n1: 524288 0x112BCF: broken_app::normalize (lib.rs:15)
+                        n1: 524288 0x11163F: demo::main (demo.rs:12)
+                         n1: 524288 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                          n1: 524288 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                           n1: 524288 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                            n1: 524288 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                             n1: 524288 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                              n1: 524288 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                               n1: 524288 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                                n1: 524288 0x12DC67: {closure#0} (rt.rs:175)
+                                 n1: 524288 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                                  n1: 524288 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                                   n1: 524288 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                                    n1: 524288 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                                     n0: 524288 0x11194F: main (in /app/target/release/demo)
+ n1: 500000 0x140BCB: alloc (alloc.rs:101)
+  n1: 500000 0x140BCB: alloc_impl_runtime (alloc.rs:210)
+   n1: 500000 0x140BCB: alloc_impl (alloc.rs:332)
+    n1: 500000 0x140BCB: allocate (alloc.rs:449)
+     n1: 500000 0x140BCB: try_allocate_in<alloc::alloc::Global> (mod.rs:465)
+      n1: 500000 0x140BCB: with_capacity_in<alloc::alloc::Global> (mod.rs:434)
+       n1: 500000 0x140BCB: with_capacity_in<u8, alloc::alloc::Global> (mod.rs:177)
+        n1: 500000 0x140BCB: with_capacity_in<u8, alloc::alloc::Global> (mod.rs:977)
+         n1: 500000 0x140BCB: with_capacity<u8> (mod.rs:524)
+          n1: 500000 0x140BCB: convert_while_ascii (str.rs:641)
+           n1: 500000 0x140BCB: <str>::to_lowercase (str.rs:381)
+            n1: 500000 0x112BE3: broken_app::normalize (lib.rs:16)
+             n1: 500000 0x11163F: demo::main (demo.rs:12)
+              n1: 500000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+               n1: 500000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                n1: 500000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                 n1: 500000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                  n1: 500000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                   n1: 500000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                    n1: 500000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                     n1: 500000 0x12DC67: {closure#0} (rt.rs:175)
+                      n1: 500000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                       n1: 500000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                        n1: 500000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                         n1: 500000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                          n0: 500000 0x11194F: main (in /app/target/release/demo)
+ n1: 80000 0x11159B: alloc (library/alloc/src/alloc.rs:101)
+  n1: 80000 0x11159B: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 80000 0x11159B: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 80000 0x11159B: allocate (library/alloc/src/alloc.rs:449)
+     n1: 80000 0x11159B: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 80000 0x11159B: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 80000 0x11159B: with_capacity_in<u64, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 80000 0x11159B: with_capacity_in<u64, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 80000 0x11159B: with_capacity<u64> (library/alloc/src/vec/mod.rs:524)
+          n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 80000 0x11159B: collect<core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>, alloc::vec::Vec<u64, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 80000 0x11159B: demo::main (demo.rs:7)
+               n1: 80000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 80000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 80000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 80000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 80000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 80000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 80000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 80000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 80000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 80000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 80000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 80000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 80000 0x11194F: main (in /app/target/release/demo)
+ n0: 548 in 10 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=2
+#-----------
+time=109413023
+mem_heap_B=5730556
+mem_heap_extra_B=76
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=151233479
+mem_heap_B=5730556
+mem_heap_extra_B=76
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=234874024
+mem_heap_B=5730556
+mem_heap_extra_B=76
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=297604473
+mem_heap_B=5730556
+mem_heap_extra_B=76
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=360334809
+mem_heap_B=5730556
+mem_heap_extra_B=76
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=423065385
+mem_heap_B=5730556
+mem_heap_extra_B=76
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=506706276
+mem_heap_B=5730556
+mem_heap_extra_B=76
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=594438595
+mem_heap_B=5992692
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=678079483
+mem_heap_B=5992692
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=761720163
+mem_heap_B=5992692
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=824450791
+mem_heap_B=5992692
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=866271281
+mem_heap_B=5992692
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=929001908
+mem_heap_B=5992692
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=1012642792
+mem_heap_B=5992692
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=1075373472
+mem_heap_B=5992692
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=1117194145
+mem_heap_B=5992692
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=1184014110
+mem_heap_B=6254836
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=1246744637
+mem_heap_B=6254836
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=1330385240
+mem_heap_B=6254836
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=1393115880
+mem_heap_B=6254836
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=1476756694
+mem_heap_B=6254836
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=detailed
+n6: 6254836 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4000000 0x11135F: alloc (library/alloc/src/alloc.rs:101)
+  n1: 4000000 0x11135F: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 4000000 0x11135F: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 4000000 0x11135F: allocate (library/alloc/src/alloc.rs:449)
+     n1: 4000000 0x11135F: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 4000000 0x11135F: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 4000000 0x11135F: with_capacity_in<i64, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 4000000 0x11135F: with_capacity_in<i64, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 4000000 0x11135F: with_capacity<i64> (library/alloc/src/vec/mod.rs:524)
+          n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 4000000 0x11135F: collect<core::ops::range::Range<i64>, alloc::vec::Vec<i64, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 4000000 0x11135F: demo::main (demo.rs:4)
+               n1: 4000000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 4000000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 4000000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 4000000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 4000000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 4000000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 4000000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 4000000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 4000000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 4000000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 4000000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 4000000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 4000000 0x11194F: main (in /app/target/release/demo)
+ n1: 1000000 0x1113B7: alloc (library/alloc/src/alloc.rs:101)
+  n1: 1000000 0x1113B7: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 1000000 0x1113B7: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 1000000 0x1113B7: allocate (library/alloc/src/alloc.rs:449)
+     n1: 1000000 0x1113B7: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 1000000 0x1113B7: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 1000000 0x1113B7: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 1000000 0x1113B7: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 1000000 0x1113B7: with_capacity<u8> (library/alloc/src/vec/mod.rs:524)
+          n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 1000000 0x1113B7: collect<core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>, alloc::vec::Vec<u8, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 1000000 0x1113B7: demo::main (demo.rs:5)
+               n1: 1000000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 1000000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 1000000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 1000000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 1000000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 1000000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 1000000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 1000000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 1000000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 1000000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 1000000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 1000000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 1000000 0x11194F: main (in /app/target/release/demo)
+ n1: 650000 0x111407: alloc (library/alloc/src/alloc.rs:101)
+  n1: 650000 0x111407: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 650000 0x111407: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 650000 0x111407: allocate (library/alloc/src/alloc.rs:449)
+     n1: 650000 0x111407: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 650000 0x111407: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 650000 0x111407: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 650000 0x111407: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 650000 0x111407: with_capacity<u8> (library/alloc/src/vec/mod.rs:524)
+          n1: 650000 0x111407: repeat<u8> (library/alloc/src/slice.rs:524)
+           n1: 650000 0x111407: repeat (library/alloc/src/str.rs:530)
+            n1: 650000 0x111407: demo::main (demo.rs:6)
+             n1: 650000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+              n1: 650000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+               n1: 650000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                n1: 650000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                 n1: 650000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                  n1: 650000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                   n1: 650000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                    n1: 650000 0x12DC67: {closure#0} (rt.rs:175)
+                     n1: 650000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                      n1: 650000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                       n1: 650000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                        n1: 650000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                         n0: 650000 0x11194F: main (in /app/target/release/demo)
+ n1: 524288 0x10C3C3: realloc_nonnull (library/alloc/src/alloc.rs:155)
+  n1: 524288 0x10C3C3: grow_impl_runtime (library/alloc/src/alloc.rs:259)
+   n1: 524288 0x10C3C3: grow_impl (library/alloc/src/alloc.rs:362)
+    n1: 524288 0x10C3C3: grow (library/alloc/src/alloc.rs:474)
+     n1: 524288 0x10C3C3: alloc::raw_vec::RawVecInner<A>::finish_grow (library/alloc/src/raw_vec/mod.rs:556)
+      n1: 524288 0x10C487: grow_amortized<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:528)
+       n1: 524288 0x10C487: alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle (library/alloc/src/raw_vec/mod.rs:668)
+        n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/raw_vec/mod.rs:675)
+         n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/raw_vec/mod.rs:341)
+          n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/vec/mod.rs:1471)
+           n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/vec/mod.rs:2905)
+            n1: 524288 0x11224F: spec_extend<u8, alloc::alloc::Global> (library/alloc/src/vec/spec_extend.rs:56)
+             n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/vec/mod.rs:3526)
+              n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/string.rs:1102)
+               n1: 524288 0x11224F: {closure#0}<core::str::iter::SplitWhitespace> (library/alloc/src/string.rs:2525)
+                n1: 524288 0x11224F: {closure#0}<&str, alloc::string::{impl#18}::spec_extend_into::{closure_env#0}<core::str::iter::SplitWhitespace>> (library/core/src/iter/traits/iterator.rs:886)
+                 n1: 524288 0x11224F: fold<core::str::iter::SplitWhitespace, (), core::iter::traits::iterator::Iterator::for_each::call::{closure_env#0}<&str, alloc::string::{impl#18}::spec_extend_into::{closure_env#0}<core::str::iter::SplitWhitespace>>> (library/core/src/iter/traits/iterator.rs:2673)
+                  n1: 524288 0x11224F: for_each<core::str::iter::SplitWhitespace, alloc::string::{impl#18}::spec_extend_into::{closure_env#0}<core::str::iter::SplitWhitespace>> (library/core/src/iter/traits/iterator.rs:889)
+                   n1: 524288 0x11224F: <T as alloc::string::SpecExtendStr>::spec_extend_into (library/alloc/src/string.rs:2525)
+                    n1: 524288 0x112BCF: UnknownInlinedFun (library/alloc/src/string.rs:2508)
+                     n1: 524288 0x112BCF: UnknownInlinedFun (library/alloc/src/string.rs:2389)
+                      n1: 524288 0x112BCF: collect<core::str::iter::SplitWhitespace, alloc::string::String> (library/core/src/iter/traits/iterator.rs:2092)
+                       n1: 524288 0x112BCF: broken_app::normalize (lib.rs:15)
+                        n1: 524288 0x11163F: demo::main (demo.rs:12)
+                         n1: 524288 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                          n1: 524288 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                           n1: 524288 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                            n1: 524288 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                             n1: 524288 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                              n1: 524288 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                               n1: 524288 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                                n1: 524288 0x12DC67: {closure#0} (rt.rs:175)
+                                 n1: 524288 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                                  n1: 524288 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                                   n1: 524288 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                                    n1: 524288 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                                     n0: 524288 0x11194F: main (in /app/target/release/demo)
+ n1: 80000 0x11159B: alloc (library/alloc/src/alloc.rs:101)
+  n1: 80000 0x11159B: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 80000 0x11159B: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 80000 0x11159B: allocate (library/alloc/src/alloc.rs:449)
+     n1: 80000 0x11159B: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 80000 0x11159B: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 80000 0x11159B: with_capacity_in<u64, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 80000 0x11159B: with_capacity_in<u64, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 80000 0x11159B: with_capacity<u64> (library/alloc/src/vec/mod.rs:524)
+          n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 80000 0x11159B: collect<core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>, alloc::vec::Vec<u64, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 80000 0x11159B: demo::main (demo.rs:7)
+               n1: 80000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 80000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 80000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 80000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 80000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 80000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 80000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 80000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 80000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 80000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 80000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 80000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 80000 0x11194F: main (in /app/target/release/demo)
+ n0: 548 in 13 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=23
+#-----------
+time=1518577388
+mem_heap_B=6254836
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=1581307980
+mem_heap_B=6254836
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=1623128477
+mem_heap_B=6254836
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=1685859114
+mem_heap_B=6254836
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=detailed
+n6: 6254836 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4000000 0x11135F: alloc (library/alloc/src/alloc.rs:101)
+  n1: 4000000 0x11135F: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 4000000 0x11135F: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 4000000 0x11135F: allocate (library/alloc/src/alloc.rs:449)
+     n1: 4000000 0x11135F: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 4000000 0x11135F: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 4000000 0x11135F: with_capacity_in<i64, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 4000000 0x11135F: with_capacity_in<i64, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 4000000 0x11135F: with_capacity<i64> (library/alloc/src/vec/mod.rs:524)
+          n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 4000000 0x11135F: collect<core::ops::range::Range<i64>, alloc::vec::Vec<i64, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 4000000 0x11135F: demo::main (demo.rs:4)
+               n1: 4000000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 4000000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 4000000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 4000000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 4000000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 4000000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 4000000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 4000000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 4000000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 4000000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 4000000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 4000000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 4000000 0x11194F: main (in /app/target/release/demo)
+ n1: 1000000 0x1113B7: alloc (library/alloc/src/alloc.rs:101)
+  n1: 1000000 0x1113B7: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 1000000 0x1113B7: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 1000000 0x1113B7: allocate (library/alloc/src/alloc.rs:449)
+     n1: 1000000 0x1113B7: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 1000000 0x1113B7: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 1000000 0x1113B7: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 1000000 0x1113B7: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 1000000 0x1113B7: with_capacity<u8> (library/alloc/src/vec/mod.rs:524)
+          n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 1000000 0x1113B7: collect<core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>, alloc::vec::Vec<u8, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 1000000 0x1113B7: demo::main (demo.rs:5)
+               n1: 1000000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 1000000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 1000000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 1000000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 1000000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 1000000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 1000000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 1000000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 1000000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 1000000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 1000000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 1000000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 1000000 0x11194F: main (in /app/target/release/demo)
+ n1: 650000 0x111407: alloc (library/alloc/src/alloc.rs:101)
+  n1: 650000 0x111407: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 650000 0x111407: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 650000 0x111407: allocate (library/alloc/src/alloc.rs:449)
+     n1: 650000 0x111407: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 650000 0x111407: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 650000 0x111407: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 650000 0x111407: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 650000 0x111407: with_capacity<u8> (library/alloc/src/vec/mod.rs:524)
+          n1: 650000 0x111407: repeat<u8> (library/alloc/src/slice.rs:524)
+           n1: 650000 0x111407: repeat (library/alloc/src/str.rs:530)
+            n1: 650000 0x111407: demo::main (demo.rs:6)
+             n1: 650000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+              n1: 650000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+               n1: 650000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                n1: 650000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                 n1: 650000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                  n1: 650000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                   n1: 650000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                    n1: 650000 0x12DC67: {closure#0} (rt.rs:175)
+                     n1: 650000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                      n1: 650000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                       n1: 650000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                        n1: 650000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                         n0: 650000 0x11194F: main (in /app/target/release/demo)
+ n1: 524288 0x10C3C3: realloc_nonnull (library/alloc/src/alloc.rs:155)
+  n1: 524288 0x10C3C3: grow_impl_runtime (library/alloc/src/alloc.rs:259)
+   n1: 524288 0x10C3C3: grow_impl (library/alloc/src/alloc.rs:362)
+    n1: 524288 0x10C3C3: grow (library/alloc/src/alloc.rs:474)
+     n1: 524288 0x10C3C3: alloc::raw_vec::RawVecInner<A>::finish_grow (library/alloc/src/raw_vec/mod.rs:556)
+      n1: 524288 0x10C487: grow_amortized<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:528)
+       n1: 524288 0x10C487: alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle (library/alloc/src/raw_vec/mod.rs:668)
+        n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/raw_vec/mod.rs:675)
+         n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/raw_vec/mod.rs:341)
+          n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/vec/mod.rs:1471)
+           n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/vec/mod.rs:2905)
+            n1: 524288 0x11224F: spec_extend<u8, alloc::alloc::Global> (library/alloc/src/vec/spec_extend.rs:56)
+             n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/vec/mod.rs:3526)
+              n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/string.rs:1102)
+               n1: 524288 0x11224F: {closure#0}<core::str::iter::SplitWhitespace> (library/alloc/src/string.rs:2525)
+                n1: 524288 0x11224F: {closure#0}<&str, alloc::string::{impl#18}::spec_extend_into::{closure_env#0}<core::str::iter::SplitWhitespace>> (library/core/src/iter/traits/iterator.rs:886)
+                 n1: 524288 0x11224F: fold<core::str::iter::SplitWhitespace, (), core::iter::traits::iterator::Iterator::for_each::call::{closure_env#0}<&str, alloc::string::{impl#18}::spec_extend_into::{closure_env#0}<core::str::iter::SplitWhitespace>>> (library/core/src/iter/traits/iterator.rs:2673)
+                  n1: 524288 0x11224F: for_each<core::str::iter::SplitWhitespace, alloc::string::{impl#18}::spec_extend_into::{closure_env#0}<core::str::iter::SplitWhitespace>> (library/core/src/iter/traits/iterator.rs:889)
+                   n1: 524288 0x11224F: <T as alloc::string::SpecExtendStr>::spec_extend_into (library/alloc/src/string.rs:2525)
+                    n1: 524288 0x112BCF: UnknownInlinedFun (library/alloc/src/string.rs:2508)
+                     n1: 524288 0x112BCF: UnknownInlinedFun (library/alloc/src/string.rs:2389)
+                      n1: 524288 0x112BCF: collect<core::str::iter::SplitWhitespace, alloc::string::String> (library/core/src/iter/traits/iterator.rs:2092)
+                       n1: 524288 0x112BCF: broken_app::normalize (lib.rs:15)
+                        n1: 524288 0x11163F: demo::main (demo.rs:12)
+                         n1: 524288 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                          n1: 524288 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                           n1: 524288 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                            n1: 524288 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                             n1: 524288 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                              n1: 524288 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                               n1: 524288 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                                n1: 524288 0x12DC67: {closure#0} (rt.rs:175)
+                                 n1: 524288 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                                  n1: 524288 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                                   n1: 524288 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                                    n1: 524288 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                                     n0: 524288 0x11194F: main (in /app/target/release/demo)
+ n1: 80000 0x11159B: alloc (library/alloc/src/alloc.rs:101)
+  n1: 80000 0x11159B: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 80000 0x11159B: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 80000 0x11159B: allocate (library/alloc/src/alloc.rs:449)
+     n1: 80000 0x11159B: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 80000 0x11159B: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 80000 0x11159B: with_capacity_in<u64, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 80000 0x11159B: with_capacity_in<u64, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 80000 0x11159B: with_capacity<u64> (library/alloc/src/vec/mod.rs:524)
+          n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 80000 0x11159B: collect<core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>, alloc::vec::Vec<u64, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 80000 0x11159B: demo::main (demo.rs:7)
+               n1: 80000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 80000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 80000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 80000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 80000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 80000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 80000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 80000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 80000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 80000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 80000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 80000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 80000 0x11194F: main (in /app/target/release/demo)
+ n0: 548 in 13 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=27
+#-----------
+time=1769500115
+mem_heap_B=6254836
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=1839651851
+mem_heap_B=6754836
+mem_heap_extra_B=76
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=1923292292
+mem_heap_B=6754836
+mem_heap_extra_B=76
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=1965112679
+mem_heap_B=6754836
+mem_heap_extra_B=76
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=2027843286
+mem_heap_B=6754836
+mem_heap_extra_B=76
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=2069664079
+mem_heap_B=6754836
+mem_heap_extra_B=76
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=2132832253
+mem_heap_B=6230548
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=2216474958
+mem_heap_B=5958012
+mem_heap_extra_B=84
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=2259601047
+mem_heap_B=5730548
+mem_heap_extra_B=60
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=2325894833
+mem_heap_B=5730564
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=detailed
+n5: 5730564 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4000000 0x11135F: alloc (library/alloc/src/alloc.rs:101)
+  n1: 4000000 0x11135F: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 4000000 0x11135F: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 4000000 0x11135F: allocate (library/alloc/src/alloc.rs:449)
+     n1: 4000000 0x11135F: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 4000000 0x11135F: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 4000000 0x11135F: with_capacity_in<i64, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 4000000 0x11135F: with_capacity_in<i64, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 4000000 0x11135F: with_capacity<i64> (library/alloc/src/vec/mod.rs:524)
+          n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 4000000 0x11135F: collect<core::ops::range::Range<i64>, alloc::vec::Vec<i64, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 4000000 0x11135F: demo::main (demo.rs:4)
+               n1: 4000000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 4000000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 4000000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 4000000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 4000000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 4000000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 4000000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 4000000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 4000000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 4000000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 4000000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 4000000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 4000000 0x11194F: main (in /app/target/release/demo)
+ n1: 1000000 0x1113B7: alloc (library/alloc/src/alloc.rs:101)
+  n1: 1000000 0x1113B7: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 1000000 0x1113B7: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 1000000 0x1113B7: allocate (library/alloc/src/alloc.rs:449)
+     n1: 1000000 0x1113B7: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 1000000 0x1113B7: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 1000000 0x1113B7: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 1000000 0x1113B7: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 1000000 0x1113B7: with_capacity<u8> (library/alloc/src/vec/mod.rs:524)
+          n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 1000000 0x1113B7: collect<core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>, alloc::vec::Vec<u8, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 1000000 0x1113B7: demo::main (demo.rs:5)
+               n1: 1000000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 1000000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 1000000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 1000000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 1000000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 1000000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 1000000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 1000000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 1000000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 1000000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 1000000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 1000000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 1000000 0x11194F: main (in /app/target/release/demo)
+ n1: 650000 0x111407: alloc (library/alloc/src/alloc.rs:101)
+  n1: 650000 0x111407: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 650000 0x111407: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 650000 0x111407: allocate (library/alloc/src/alloc.rs:449)
+     n1: 650000 0x111407: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 650000 0x111407: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 650000 0x111407: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 650000 0x111407: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 650000 0x111407: with_capacity<u8> (library/alloc/src/vec/mod.rs:524)
+          n1: 650000 0x111407: repeat<u8> (library/alloc/src/slice.rs:524)
+           n1: 650000 0x111407: repeat (library/alloc/src/str.rs:530)
+            n1: 650000 0x111407: demo::main (demo.rs:6)
+             n1: 650000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+              n1: 650000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+               n1: 650000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                n1: 650000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                 n1: 650000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                  n1: 650000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                   n1: 650000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                    n1: 650000 0x12DC67: {closure#0} (rt.rs:175)
+                     n1: 650000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                      n1: 650000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                       n1: 650000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                        n1: 650000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                         n0: 650000 0x11194F: main (in /app/target/release/demo)
+ n1: 80000 0x11159B: alloc (library/alloc/src/alloc.rs:101)
+  n1: 80000 0x11159B: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 80000 0x11159B: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 80000 0x11159B: allocate (library/alloc/src/alloc.rs:449)
+     n1: 80000 0x11159B: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 80000 0x11159B: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 80000 0x11159B: with_capacity_in<u64, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 80000 0x11159B: with_capacity_in<u64, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 80000 0x11159B: with_capacity<u64> (library/alloc/src/vec/mod.rs:524)
+          n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 80000 0x11159B: collect<core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>, alloc::vec::Vec<u64, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 80000 0x11159B: demo::main (demo.rs:7)
+               n1: 80000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 80000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 80000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 80000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 80000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 80000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 80000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 80000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 80000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 80000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 80000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 80000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 80000 0x11194F: main (in /app/target/release/demo)
+ n0: 564 in 14 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=37
+#-----------
+time=2409537860
+mem_heap_B=5730676
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=2451360440
+mem_heap_B=5730804
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=2514119190
+mem_heap_B=5732596
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=2597983983
+mem_heap_B=5746932
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=2662504145
+mem_heap_B=5861620
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=2706369554
+mem_heap_B=5992692
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=2752279610
+mem_heap_B=6254836
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=detailed
+n6: 6254836 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4000000 0x11135F: alloc (library/alloc/src/alloc.rs:101)
+  n1: 4000000 0x11135F: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 4000000 0x11135F: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 4000000 0x11135F: allocate (library/alloc/src/alloc.rs:449)
+     n1: 4000000 0x11135F: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 4000000 0x11135F: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 4000000 0x11135F: with_capacity_in<i64, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 4000000 0x11135F: with_capacity_in<i64, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 4000000 0x11135F: with_capacity<i64> (library/alloc/src/vec/mod.rs:524)
+          n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 4000000 0x11135F: collect<core::ops::range::Range<i64>, alloc::vec::Vec<i64, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 4000000 0x11135F: demo::main (demo.rs:4)
+               n1: 4000000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 4000000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 4000000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 4000000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 4000000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 4000000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 4000000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 4000000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 4000000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 4000000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 4000000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 4000000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 4000000 0x11194F: main (in /app/target/release/demo)
+ n1: 1000000 0x1113B7: alloc (library/alloc/src/alloc.rs:101)
+  n1: 1000000 0x1113B7: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 1000000 0x1113B7: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 1000000 0x1113B7: allocate (library/alloc/src/alloc.rs:449)
+     n1: 1000000 0x1113B7: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 1000000 0x1113B7: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 1000000 0x1113B7: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 1000000 0x1113B7: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 1000000 0x1113B7: with_capacity<u8> (library/alloc/src/vec/mod.rs:524)
+          n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 1000000 0x1113B7: collect<core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>, alloc::vec::Vec<u8, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 1000000 0x1113B7: demo::main (demo.rs:5)
+               n1: 1000000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 1000000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 1000000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 1000000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 1000000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 1000000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 1000000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 1000000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 1000000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 1000000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 1000000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 1000000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 1000000 0x11194F: main (in /app/target/release/demo)
+ n1: 650000 0x111407: alloc (library/alloc/src/alloc.rs:101)
+  n1: 650000 0x111407: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 650000 0x111407: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 650000 0x111407: allocate (library/alloc/src/alloc.rs:449)
+     n1: 650000 0x111407: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 650000 0x111407: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 650000 0x111407: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 650000 0x111407: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 650000 0x111407: with_capacity<u8> (library/alloc/src/vec/mod.rs:524)
+          n1: 650000 0x111407: repeat<u8> (library/alloc/src/slice.rs:524)
+           n1: 650000 0x111407: repeat (library/alloc/src/str.rs:530)
+            n1: 650000 0x111407: demo::main (demo.rs:6)
+             n1: 650000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+              n1: 650000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+               n1: 650000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                n1: 650000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                 n1: 650000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                  n1: 650000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                   n1: 650000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                    n1: 650000 0x12DC67: {closure#0} (rt.rs:175)
+                     n1: 650000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                      n1: 650000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                       n1: 650000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                        n1: 650000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                         n0: 650000 0x11194F: main (in /app/target/release/demo)
+ n1: 524288 0x10C3C3: realloc_nonnull (library/alloc/src/alloc.rs:155)
+  n1: 524288 0x10C3C3: grow_impl_runtime (library/alloc/src/alloc.rs:259)
+   n1: 524288 0x10C3C3: grow_impl (library/alloc/src/alloc.rs:362)
+    n1: 524288 0x10C3C3: grow (library/alloc/src/alloc.rs:474)
+     n1: 524288 0x10C3C3: alloc::raw_vec::RawVecInner<A>::finish_grow (library/alloc/src/raw_vec/mod.rs:556)
+      n1: 524288 0x10C487: grow_amortized<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:528)
+       n1: 524288 0x10C487: alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle (library/alloc/src/raw_vec/mod.rs:668)
+        n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/raw_vec/mod.rs:675)
+         n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/raw_vec/mod.rs:341)
+          n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/vec/mod.rs:1471)
+           n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/vec/mod.rs:2905)
+            n1: 524288 0x11224F: spec_extend<u8, alloc::alloc::Global> (library/alloc/src/vec/spec_extend.rs:56)
+             n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/vec/mod.rs:3526)
+              n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/string.rs:1102)
+               n1: 524288 0x11224F: {closure#0}<core::str::iter::SplitWhitespace> (library/alloc/src/string.rs:2525)
+                n1: 524288 0x11224F: {closure#0}<&str, alloc::string::{impl#18}::spec_extend_into::{closure_env#0}<core::str::iter::SplitWhitespace>> (library/core/src/iter/traits/iterator.rs:886)
+                 n1: 524288 0x11224F: fold<core::str::iter::SplitWhitespace, (), core::iter::traits::iterator::Iterator::for_each::call::{closure_env#0}<&str, alloc::string::{impl#18}::spec_extend_into::{closure_env#0}<core::str::iter::SplitWhitespace>>> (library/core/src/iter/traits/iterator.rs:2673)
+                  n1: 524288 0x11224F: for_each<core::str::iter::SplitWhitespace, alloc::string::{impl#18}::spec_extend_into::{closure_env#0}<core::str::iter::SplitWhitespace>> (library/core/src/iter/traits/iterator.rs:889)
+                   n1: 524288 0x11224F: <T as alloc::string::SpecExtendStr>::spec_extend_into (library/alloc/src/string.rs:2525)
+                    n1: 524288 0x112BCF: UnknownInlinedFun (library/alloc/src/string.rs:2508)
+                     n1: 524288 0x112BCF: UnknownInlinedFun (library/alloc/src/string.rs:2389)
+                      n1: 524288 0x112BCF: collect<core::str::iter::SplitWhitespace, alloc::string::String> (library/core/src/iter/traits/iterator.rs:2092)
+                       n1: 524288 0x112BCF: broken_app::normalize (lib.rs:15)
+                        n1: 524288 0x11163F: demo::main (demo.rs:12)
+                         n1: 524288 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                          n1: 524288 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                           n1: 524288 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                            n1: 524288 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                             n1: 524288 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                              n1: 524288 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                               n1: 524288 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                                n1: 524288 0x12DC67: {closure#0} (rt.rs:175)
+                                 n1: 524288 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                                  n1: 524288 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                                   n1: 524288 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                                    n1: 524288 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                                     n0: 524288 0x11194F: main (in /app/target/release/demo)
+ n1: 80000 0x11159B: alloc (library/alloc/src/alloc.rs:101)
+  n1: 80000 0x11159B: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 80000 0x11159B: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 80000 0x11159B: allocate (library/alloc/src/alloc.rs:449)
+     n1: 80000 0x11159B: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 80000 0x11159B: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 80000 0x11159B: with_capacity_in<u64, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 80000 0x11159B: with_capacity_in<u64, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 80000 0x11159B: with_capacity<u64> (library/alloc/src/vec/mod.rs:524)
+          n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 80000 0x11159B: collect<core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>, alloc::vec::Vec<u64, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 80000 0x11159B: demo::main (demo.rs:7)
+               n1: 80000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 80000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 80000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 80000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 80000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 80000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 80000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 80000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 80000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 80000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 80000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 80000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 80000 0x11194F: main (in /app/target/release/demo)
+ n0: 548 in 13 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=44
+#-----------
+time=2801958786
+mem_heap_B=6230548
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=2886907116
+mem_heap_B=5810548
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=2953201268
+mem_heap_B=5730580
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=3036845647
+mem_heap_B=5730804
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=3120498771
+mem_heap_B=5731572
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=3183341530
+mem_heap_B=5738740
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=detailed
+n5: 5738740 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4000000 0x11135F: alloc (library/alloc/src/alloc.rs:101)
+  n1: 4000000 0x11135F: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 4000000 0x11135F: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 4000000 0x11135F: allocate (library/alloc/src/alloc.rs:449)
+     n1: 4000000 0x11135F: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 4000000 0x11135F: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 4000000 0x11135F: with_capacity_in<i64, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 4000000 0x11135F: with_capacity_in<i64, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 4000000 0x11135F: with_capacity<i64> (library/alloc/src/vec/mod.rs:524)
+          n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 4000000 0x11135F: collect<core::ops::range::Range<i64>, alloc::vec::Vec<i64, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 4000000 0x11135F: demo::main (demo.rs:4)
+               n1: 4000000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 4000000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 4000000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 4000000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 4000000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 4000000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 4000000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 4000000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 4000000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 4000000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 4000000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 4000000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 4000000 0x11194F: main (in /app/target/release/demo)
+ n1: 1000000 0x1113B7: alloc (library/alloc/src/alloc.rs:101)
+  n1: 1000000 0x1113B7: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 1000000 0x1113B7: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 1000000 0x1113B7: allocate (library/alloc/src/alloc.rs:449)
+     n1: 1000000 0x1113B7: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 1000000 0x1113B7: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 1000000 0x1113B7: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 1000000 0x1113B7: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 1000000 0x1113B7: with_capacity<u8> (library/alloc/src/vec/mod.rs:524)
+          n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 1000000 0x1113B7: collect<core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>, alloc::vec::Vec<u8, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 1000000 0x1113B7: demo::main (demo.rs:5)
+               n1: 1000000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 1000000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 1000000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 1000000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 1000000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 1000000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 1000000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 1000000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 1000000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 1000000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 1000000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 1000000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 1000000 0x11194F: main (in /app/target/release/demo)
+ n1: 650000 0x111407: alloc (library/alloc/src/alloc.rs:101)
+  n1: 650000 0x111407: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 650000 0x111407: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 650000 0x111407: allocate (library/alloc/src/alloc.rs:449)
+     n1: 650000 0x111407: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 650000 0x111407: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 650000 0x111407: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 650000 0x111407: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 650000 0x111407: with_capacity<u8> (library/alloc/src/vec/mod.rs:524)
+          n1: 650000 0x111407: repeat<u8> (library/alloc/src/slice.rs:524)
+           n1: 650000 0x111407: repeat (library/alloc/src/str.rs:530)
+            n1: 650000 0x111407: demo::main (demo.rs:6)
+             n1: 650000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+              n1: 650000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+               n1: 650000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                n1: 650000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                 n1: 650000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                  n1: 650000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                   n1: 650000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                    n1: 650000 0x12DC67: {closure#0} (rt.rs:175)
+                     n1: 650000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                      n1: 650000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                       n1: 650000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                        n1: 650000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                         n0: 650000 0x11194F: main (in /app/target/release/demo)
+ n1: 80000 0x11159B: alloc (library/alloc/src/alloc.rs:101)
+  n1: 80000 0x11159B: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 80000 0x11159B: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 80000 0x11159B: allocate (library/alloc/src/alloc.rs:449)
+     n1: 80000 0x11159B: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 80000 0x11159B: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 80000 0x11159B: with_capacity_in<u64, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 80000 0x11159B: with_capacity_in<u64, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 80000 0x11159B: with_capacity<u64> (library/alloc/src/vec/mod.rs:524)
+          n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 80000 0x11159B: collect<core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>, alloc::vec::Vec<u64, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 80000 0x11159B: demo::main (demo.rs:7)
+               n1: 80000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 80000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 80000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 80000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 80000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 80000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 80000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 80000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 80000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 80000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 80000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 80000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 80000 0x11194F: main (in /app/target/release/demo)
+ n0: 8740 in 14 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=50
+#-----------
+time=3225289799
+mem_heap_B=5746932
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=3267365842
+mem_heap_B=5763316
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=3309186354
+mem_heap_B=5763316
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=3351007012
+mem_heap_B=5763316
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=3392827501
+mem_heap_B=5763316
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=3434648097
+mem_heap_B=5763316
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=3476468631
+mem_heap_B=5763316
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=3518289047
+mem_heap_B=5763316
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=3560620708
+mem_heap_B=5796084
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=3602441099
+mem_heap_B=5796084
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=detailed
+n6: 5796084 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4000000 0x11135F: alloc (library/alloc/src/alloc.rs:101)
+  n1: 4000000 0x11135F: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 4000000 0x11135F: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 4000000 0x11135F: allocate (library/alloc/src/alloc.rs:449)
+     n1: 4000000 0x11135F: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 4000000 0x11135F: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 4000000 0x11135F: with_capacity_in<i64, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 4000000 0x11135F: with_capacity_in<i64, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 4000000 0x11135F: with_capacity<i64> (library/alloc/src/vec/mod.rs:524)
+          n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 4000000 0x11135F: collect<core::ops::range::Range<i64>, alloc::vec::Vec<i64, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 4000000 0x11135F: demo::main (demo.rs:4)
+               n1: 4000000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 4000000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 4000000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 4000000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 4000000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 4000000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 4000000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 4000000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 4000000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 4000000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 4000000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 4000000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 4000000 0x11194F: main (in /app/target/release/demo)
+ n1: 1000000 0x1113B7: alloc (library/alloc/src/alloc.rs:101)
+  n1: 1000000 0x1113B7: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 1000000 0x1113B7: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 1000000 0x1113B7: allocate (library/alloc/src/alloc.rs:449)
+     n1: 1000000 0x1113B7: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 1000000 0x1113B7: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 1000000 0x1113B7: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 1000000 0x1113B7: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 1000000 0x1113B7: with_capacity<u8> (library/alloc/src/vec/mod.rs:524)
+          n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 1000000 0x1113B7: collect<core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>, alloc::vec::Vec<u8, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 1000000 0x1113B7: demo::main (demo.rs:5)
+               n1: 1000000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 1000000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 1000000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 1000000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 1000000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 1000000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 1000000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 1000000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 1000000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 1000000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 1000000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 1000000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 1000000 0x11194F: main (in /app/target/release/demo)
+ n1: 650000 0x111407: alloc (library/alloc/src/alloc.rs:101)
+  n1: 650000 0x111407: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 650000 0x111407: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 650000 0x111407: allocate (library/alloc/src/alloc.rs:449)
+     n1: 650000 0x111407: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 650000 0x111407: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 650000 0x111407: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 650000 0x111407: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 650000 0x111407: with_capacity<u8> (library/alloc/src/vec/mod.rs:524)
+          n1: 650000 0x111407: repeat<u8> (library/alloc/src/slice.rs:524)
+           n1: 650000 0x111407: repeat (library/alloc/src/str.rs:530)
+            n1: 650000 0x111407: demo::main (demo.rs:6)
+             n1: 650000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+              n1: 650000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+               n1: 650000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                n1: 650000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                 n1: 650000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                  n1: 650000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                   n1: 650000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                    n1: 650000 0x12DC67: {closure#0} (rt.rs:175)
+                     n1: 650000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                      n1: 650000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                       n1: 650000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                        n1: 650000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                         n0: 650000 0x11194F: main (in /app/target/release/demo)
+ n1: 80000 0x11159B: alloc (library/alloc/src/alloc.rs:101)
+  n1: 80000 0x11159B: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 80000 0x11159B: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 80000 0x11159B: allocate (library/alloc/src/alloc.rs:449)
+     n1: 80000 0x11159B: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 80000 0x11159B: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 80000 0x11159B: with_capacity_in<u64, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 80000 0x11159B: with_capacity_in<u64, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 80000 0x11159B: with_capacity<u64> (library/alloc/src/vec/mod.rs:524)
+          n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 80000 0x11159B: collect<core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>, alloc::vec::Vec<u64, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 80000 0x11159B: demo::main (demo.rs:7)
+               n1: 80000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 80000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 80000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 80000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 80000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 80000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 80000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 80000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 80000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 80000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 80000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 80000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 80000 0x11194F: main (in /app/target/release/demo)
+ n1: 65536 0x10C3C3: realloc_nonnull (library/alloc/src/alloc.rs:155)
+  n1: 65536 0x10C3C3: grow_impl_runtime (library/alloc/src/alloc.rs:259)
+   n1: 65536 0x10C3C3: grow_impl (library/alloc/src/alloc.rs:362)
+    n1: 65536 0x10C3C3: grow (library/alloc/src/alloc.rs:474)
+     n1: 65536 0x10C3C3: alloc::raw_vec::RawVecInner<A>::finish_grow (library/alloc/src/raw_vec/mod.rs:556)
+      n1: 65536 0x10C487: grow_amortized<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:528)
+       n1: 65536 0x10C487: alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle (library/alloc/src/raw_vec/mod.rs:668)
+        n1: 65536 0x11224F: UnknownInlinedFun (library/alloc/src/raw_vec/mod.rs:675)
+         n1: 65536 0x11224F: UnknownInlinedFun (library/alloc/src/raw_vec/mod.rs:341)
+          n1: 65536 0x11224F: UnknownInlinedFun (library/alloc/src/vec/mod.rs:1471)
+           n1: 65536 0x11224F: UnknownInlinedFun (library/alloc/src/vec/mod.rs:2905)
+            n1: 65536 0x11224F: spec_extend<u8, alloc::alloc::Global> (library/alloc/src/vec/spec_extend.rs:56)
+             n1: 65536 0x11224F: UnknownInlinedFun (library/alloc/src/vec/mod.rs:3526)
+              n1: 65536 0x11224F: UnknownInlinedFun (library/alloc/src/string.rs:1102)
+               n1: 65536 0x11224F: {closure#0}<core::str::iter::SplitWhitespace> (library/alloc/src/string.rs:2525)
+                n1: 65536 0x11224F: {closure#0}<&str, alloc::string::{impl#18}::spec_extend_into::{closure_env#0}<core::str::iter::SplitWhitespace>> (library/core/src/iter/traits/iterator.rs:886)
+                 n1: 65536 0x11224F: fold<core::str::iter::SplitWhitespace, (), core::iter::traits::iterator::Iterator::for_each::call::{closure_env#0}<&str, alloc::string::{impl#18}::spec_extend_into::{closure_env#0}<core::str::iter::SplitWhitespace>>> (library/core/src/iter/traits/iterator.rs:2673)
+                  n1: 65536 0x11224F: for_each<core::str::iter::SplitWhitespace, alloc::string::{impl#18}::spec_extend_into::{closure_env#0}<core::str::iter::SplitWhitespace>> (library/core/src/iter/traits/iterator.rs:889)
+                   n1: 65536 0x11224F: <T as alloc::string::SpecExtendStr>::spec_extend_into (library/alloc/src/string.rs:2525)
+                    n1: 65536 0x112BCF: UnknownInlinedFun (library/alloc/src/string.rs:2508)
+                     n1: 65536 0x112BCF: UnknownInlinedFun (library/alloc/src/string.rs:2389)
+                      n1: 65536 0x112BCF: collect<core::str::iter::SplitWhitespace, alloc::string::String> (library/core/src/iter/traits/iterator.rs:2092)
+                       n1: 65536 0x112BCF: broken_app::normalize (lib.rs:15)
+                        n1: 65536 0x11163F: demo::main (demo.rs:12)
+                         n1: 65536 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                          n1: 65536 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                           n1: 65536 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                            n1: 65536 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                             n1: 65536 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                              n1: 65536 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                               n1: 65536 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                                n1: 65536 0x12DC67: {closure#0} (rt.rs:175)
+                                 n1: 65536 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                                  n1: 65536 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                                   n1: 65536 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                                    n1: 65536 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                                     n0: 65536 0x11194F: main (in /app/target/release/demo)
+ n0: 548 in 13 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=60
+#-----------
+time=3644261772
+mem_heap_B=5796084
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=3686082187
+mem_heap_B=5796084
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=3728925133
+mem_heap_B=5861620
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=3770745546
+mem_heap_B=5861620
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=3812566054
+mem_heap_B=5861620
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=3854386533
+mem_heap_B=5861620
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=3898251704
+mem_heap_B=5992692
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=3940072128
+mem_heap_B=5992692
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=3985982027
+mem_heap_B=6254836
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=4035223557
+mem_heap_B=6754836
+mem_heap_extra_B=76
+mem_stacks_B=0
+heap_tree=detailed
+n7: 6754836 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4000000 0x11135F: alloc (library/alloc/src/alloc.rs:101)
+  n1: 4000000 0x11135F: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 4000000 0x11135F: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 4000000 0x11135F: allocate (library/alloc/src/alloc.rs:449)
+     n1: 4000000 0x11135F: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 4000000 0x11135F: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 4000000 0x11135F: with_capacity_in<i64, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 4000000 0x11135F: with_capacity_in<i64, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 4000000 0x11135F: with_capacity<i64> (library/alloc/src/vec/mod.rs:524)
+          n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 4000000 0x11135F: from_iter<i64, core::ops::range::Range<i64>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 4000000 0x11135F: collect<core::ops::range::Range<i64>, alloc::vec::Vec<i64, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 4000000 0x11135F: demo::main (demo.rs:4)
+               n1: 4000000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 4000000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 4000000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 4000000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 4000000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 4000000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 4000000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 4000000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 4000000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 4000000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 4000000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 4000000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 4000000 0x11194F: main (in /app/target/release/demo)
+ n1: 1000000 0x1113B7: alloc (library/alloc/src/alloc.rs:101)
+  n1: 1000000 0x1113B7: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 1000000 0x1113B7: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 1000000 0x1113B7: allocate (library/alloc/src/alloc.rs:449)
+     n1: 1000000 0x1113B7: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 1000000 0x1113B7: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 1000000 0x1113B7: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 1000000 0x1113B7: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 1000000 0x1113B7: with_capacity<u8> (library/alloc/src/vec/mod.rs:524)
+          n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 1000000 0x1113B7: from_iter<u8, core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 1000000 0x1113B7: collect<core::iter::adapters::map::Map<core::ops::range::Range<i32>, demo::main::{closure_env#0}>, alloc::vec::Vec<u8, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 1000000 0x1113B7: demo::main (demo.rs:5)
+               n1: 1000000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 1000000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 1000000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 1000000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 1000000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 1000000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 1000000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 1000000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 1000000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 1000000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 1000000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 1000000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 1000000 0x11194F: main (in /app/target/release/demo)
+ n1: 650000 0x111407: alloc (library/alloc/src/alloc.rs:101)
+  n1: 650000 0x111407: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 650000 0x111407: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 650000 0x111407: allocate (library/alloc/src/alloc.rs:449)
+     n1: 650000 0x111407: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 650000 0x111407: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 650000 0x111407: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 650000 0x111407: with_capacity_in<u8, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 650000 0x111407: with_capacity<u8> (library/alloc/src/vec/mod.rs:524)
+          n1: 650000 0x111407: repeat<u8> (library/alloc/src/slice.rs:524)
+           n1: 650000 0x111407: repeat (library/alloc/src/str.rs:530)
+            n1: 650000 0x111407: demo::main (demo.rs:6)
+             n1: 650000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+              n1: 650000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+               n1: 650000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                n1: 650000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                 n1: 650000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                  n1: 650000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                   n1: 650000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                    n1: 650000 0x12DC67: {closure#0} (rt.rs:175)
+                     n1: 650000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                      n1: 650000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                       n1: 650000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                        n1: 650000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                         n0: 650000 0x11194F: main (in /app/target/release/demo)
+ n1: 524288 0x10C3C3: realloc_nonnull (library/alloc/src/alloc.rs:155)
+  n1: 524288 0x10C3C3: grow_impl_runtime (library/alloc/src/alloc.rs:259)
+   n1: 524288 0x10C3C3: grow_impl (library/alloc/src/alloc.rs:362)
+    n1: 524288 0x10C3C3: grow (library/alloc/src/alloc.rs:474)
+     n1: 524288 0x10C3C3: alloc::raw_vec::RawVecInner<A>::finish_grow (library/alloc/src/raw_vec/mod.rs:556)
+      n1: 524288 0x10C487: grow_amortized<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:528)
+       n1: 524288 0x10C487: alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle (library/alloc/src/raw_vec/mod.rs:668)
+        n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/raw_vec/mod.rs:675)
+         n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/raw_vec/mod.rs:341)
+          n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/vec/mod.rs:1471)
+           n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/vec/mod.rs:2905)
+            n1: 524288 0x11224F: spec_extend<u8, alloc::alloc::Global> (library/alloc/src/vec/spec_extend.rs:56)
+             n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/vec/mod.rs:3526)
+              n1: 524288 0x11224F: UnknownInlinedFun (library/alloc/src/string.rs:1102)
+               n1: 524288 0x11224F: {closure#0}<core::str::iter::SplitWhitespace> (library/alloc/src/string.rs:2525)
+                n1: 524288 0x11224F: {closure#0}<&str, alloc::string::{impl#18}::spec_extend_into::{closure_env#0}<core::str::iter::SplitWhitespace>> (library/core/src/iter/traits/iterator.rs:886)
+                 n1: 524288 0x11224F: fold<core::str::iter::SplitWhitespace, (), core::iter::traits::iterator::Iterator::for_each::call::{closure_env#0}<&str, alloc::string::{impl#18}::spec_extend_into::{closure_env#0}<core::str::iter::SplitWhitespace>>> (library/core/src/iter/traits/iterator.rs:2673)
+                  n1: 524288 0x11224F: for_each<core::str::iter::SplitWhitespace, alloc::string::{impl#18}::spec_extend_into::{closure_env#0}<core::str::iter::SplitWhitespace>> (library/core/src/iter/traits/iterator.rs:889)
+                   n1: 524288 0x11224F: <T as alloc::string::SpecExtendStr>::spec_extend_into (library/alloc/src/string.rs:2525)
+                    n1: 524288 0x112BCF: UnknownInlinedFun (library/alloc/src/string.rs:2508)
+                     n1: 524288 0x112BCF: UnknownInlinedFun (library/alloc/src/string.rs:2389)
+                      n1: 524288 0x112BCF: collect<core::str::iter::SplitWhitespace, alloc::string::String> (library/core/src/iter/traits/iterator.rs:2092)
+                       n1: 524288 0x112BCF: broken_app::normalize (lib.rs:15)
+                        n1: 524288 0x11163F: demo::main (demo.rs:12)
+                         n1: 524288 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                          n1: 524288 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                           n1: 524288 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                            n1: 524288 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                             n1: 524288 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                              n1: 524288 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                               n1: 524288 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                                n1: 524288 0x12DC67: {closure#0} (rt.rs:175)
+                                 n1: 524288 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                                  n1: 524288 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                                   n1: 524288 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                                    n1: 524288 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                                     n0: 524288 0x11194F: main (in /app/target/release/demo)
+ n1: 500000 0x140BCB: alloc (alloc.rs:101)
+  n1: 500000 0x140BCB: alloc_impl_runtime (alloc.rs:210)
+   n1: 500000 0x140BCB: alloc_impl (alloc.rs:332)
+    n1: 500000 0x140BCB: allocate (alloc.rs:449)
+     n1: 500000 0x140BCB: try_allocate_in<alloc::alloc::Global> (mod.rs:465)
+      n1: 500000 0x140BCB: with_capacity_in<alloc::alloc::Global> (mod.rs:434)
+       n1: 500000 0x140BCB: with_capacity_in<u8, alloc::alloc::Global> (mod.rs:177)
+        n1: 500000 0x140BCB: with_capacity_in<u8, alloc::alloc::Global> (mod.rs:977)
+         n1: 500000 0x140BCB: with_capacity<u8> (mod.rs:524)
+          n1: 500000 0x140BCB: convert_while_ascii (str.rs:641)
+           n1: 500000 0x140BCB: <str>::to_lowercase (str.rs:381)
+            n1: 500000 0x112BE3: broken_app::normalize (lib.rs:16)
+             n1: 500000 0x11163F: demo::main (demo.rs:12)
+              n1: 500000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+               n1: 500000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                n1: 500000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                 n1: 500000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                  n1: 500000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                   n1: 500000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                    n1: 500000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                     n1: 500000 0x12DC67: {closure#0} (rt.rs:175)
+                      n1: 500000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                       n1: 500000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                        n1: 500000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                         n1: 500000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                          n0: 500000 0x11194F: main (in /app/target/release/demo)
+ n1: 80000 0x11159B: alloc (library/alloc/src/alloc.rs:101)
+  n1: 80000 0x11159B: alloc_impl_runtime (library/alloc/src/alloc.rs:210)
+   n1: 80000 0x11159B: alloc_impl (library/alloc/src/alloc.rs:332)
+    n1: 80000 0x11159B: allocate (library/alloc/src/alloc.rs:449)
+     n1: 80000 0x11159B: try_allocate_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:465)
+      n1: 80000 0x11159B: with_capacity_in<alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:434)
+       n1: 80000 0x11159B: with_capacity_in<u64, alloc::alloc::Global> (library/alloc/src/raw_vec/mod.rs:177)
+        n1: 80000 0x11159B: with_capacity_in<u64, alloc::alloc::Global> (library/alloc/src/vec/mod.rs:977)
+         n1: 80000 0x11159B: with_capacity<u64> (library/alloc/src/vec/mod.rs:524)
+          n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/spec_from_iter_nested.rs:52)
+           n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/spec_from_iter.rs:33)
+            n1: 80000 0x11159B: from_iter<u64, core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>> (library/alloc/src/vec/mod.rs:3891)
+             n1: 80000 0x11159B: collect<core::iter::adapters::flatten::FlatMap<core::ops::range::Range<u64>, [u64; 2], demo::main::{closure_env#1}>, alloc::vec::Vec<u64, alloc::alloc::Global>> (library/core/src/iter/traits/iterator.rs:2092)
+              n1: 80000 0x11159B: demo::main (demo.rs:7)
+               n1: 80000 0x11130F: call_once<fn(), ()> (library/core/src/ops/function.rs:250)
+                n1: 80000 0x11130F: std::sys::backtrace::__rust_begin_short_backtrace (library/std/src/sys/backtrace.rs:166)
+                 n1: 80000 0x1112F7: std::rt::lang_start::{{closure}} (library/std/src/rt.rs:206)
+                  n1: 80000 0x12DC67: call_once<(), (dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (function.rs:287)
+                   n1: 80000 0x12DC67: do_call<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panicking.rs:581)
+                    n1: 80000 0x12DC67: catch_unwind<i32, &(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe)> (panicking.rs:544)
+                     n1: 80000 0x12DC67: catch_unwind<&(dyn core::ops::function::Fn<(), Output=i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe), i32> (panic.rs:359)
+                      n1: 80000 0x12DC67: {closure#0} (rt.rs:175)
+                       n1: 80000 0x12DC67: do_call<std::rt::lang_start_internal::{closure_env#0}, isize> (panicking.rs:581)
+                        n1: 80000 0x12DC67: catch_unwind<isize, std::rt::lang_start_internal::{closure_env#0}> (panicking.rs:544)
+                         n1: 80000 0x12DC67: catch_unwind<std::rt::lang_start_internal::{closure_env#0}, isize> (panic.rs:359)
+                          n1: 80000 0x12DC67: std::rt::lang_start_internal (rt.rs:171)
+                           n0: 80000 0x11194F: main (in /app/target/release/demo)
+ n0: 548 in 12 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=70
+#-----------
+time=4077481358
+mem_heap_B=6230548
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=4119301851
+mem_heap_B=6230548
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=4161122315
+mem_heap_B=6230548
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=4202944769
+mem_heap_B=6231572
+mem_heap_extra_B=76
+mem_stacks_B=0
+heap_tree=empty

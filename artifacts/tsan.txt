@@ -1,0 +1,29 @@
+nadir@Nadirs-MacBook-Air broken-app % RUSTFLAGS="-Zsanitizer=thread" \
+  cargo +nightly test --test integration \
+  -Zbuild-std --target aarch64-apple-darwin
+   Compiling broken-app v0.1.0 (/Users/nadir/courses/practicum/rust/hws/middle-rust-03-module-5/broken-app)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.73s
+     Running tests/integration.rs (target/aarch64-apple-darwin/debug/deps/integration-5618b18f2898b91d)
+
+running 17 tests
+test average_positive_all_negative ... ok
+test average_positive_empty_slice ... ok
+test average_positive_zero_not_counted ... ok
+test averages_only_positive ... ok
+test counts_non_zero_bytes ... ok
+test fib_small_numbers ... ok
+test dedup_preserves_uniques ... ok
+test leak_buffer_all_non_zero ... ok
+test normalize_collapses_multiple_spaces ... ok
+test normalize_empty_string ... ok
+test normalize_mixed_case ... ok
+test normalize_simple ... ok
+test normalize_splits_on_tabs_and_newlines ... ok
+test sum_even_empty_slice ... ok
+test sum_even_includes_negative_evens ... ok
+test sum_even_no_evens ... ok
+test sums_even_numbers ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+nadir@Nadirs-MacBook-Air broken-app %
