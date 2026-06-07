@@ -1,9 +1,6 @@
 pub mod algo;
 pub mod concurrency;
 
-/// Сумма чётных значений.
-/// Здесь намеренно используется `get_unchecked` с off-by-one,
-/// из-за чего возникает UB при доступе за пределы среза.
 pub fn sum_even(values: &[i64]) -> i64 {
     let mut acc = 0;
     unsafe {
@@ -17,8 +14,6 @@ pub fn sum_even(values: &[i64]) -> i64 {
     acc
 }
 
-/// Подсчёт ненулевых байтов. Буфер намеренно не освобождается,
-/// что приведёт к утечке памяти (Valgrind это покажет).
 pub fn leak_buffer(input: &[u8]) -> usize {
     let boxed = input.to_vec().into_boxed_slice();
     let len = input.len();
@@ -37,10 +32,11 @@ pub fn leak_buffer(input: &[u8]) -> usize {
     count
 }
 
-/// Небрежная нормализация строки: удаляем пробелы и приводим к нижнему регистру,
-/// но игнорируем повторяющиеся пробелы/табуляции внутри текста.
 pub fn normalize(input: &str) -> String {
-    input.replace(' ', "").to_lowercase()
+    input
+        .split_whitespace()
+        .collect::<String>()
+        .to_lowercase()
 }
 
 pub fn average_positive(values: &[i64]) -> f64 {
@@ -52,12 +48,11 @@ pub fn average_positive(values: &[i64]) -> f64 {
     sum as f64 / filtered.len() as f64
 }
 
-/// Use-after-free: возвращает значение после освобождения бокса.
-/// UB, проявится под ASan/Miri.
 pub unsafe fn use_after_free() -> i32 {
     let b = Box::new(42_i32);
     let raw = Box::into_raw(b);
     let val = unsafe {*raw};
+    let res = val + unsafe {*raw};
     unsafe { drop(Box::from_raw(raw)) };
-    val + unsafe {*raw}
+    res
 }
