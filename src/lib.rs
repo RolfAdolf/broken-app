@@ -2,34 +2,11 @@ pub mod algo;
 pub mod concurrency;
 
 pub fn sum_even(values: &[i64]) -> i64 {
-    let mut acc = 0;
-    unsafe {
-        for idx in 0..=values.len()-1 {
-            let v = *values.get_unchecked(idx);
-            if v % 2 == 0 {
-                acc += v;
-            }
-        }
-    }
-    acc
+    values.iter().copied().filter(|v| v % 2 == 0).sum()
 }
 
 pub fn leak_buffer(input: &[u8]) -> usize {
-    let boxed = input.to_vec().into_boxed_slice();
-    let len = input.len();
-    let raw = Box::into_raw(boxed) as *mut u8;
-
-    let mut count = 0;
-    unsafe {
-        for i in 0..len {
-            if *raw.add(i) != 0_u8 {
-                count += 1;
-            }
-        }
-
-        drop(Box::from_raw(raw));
-    }
-    count
+    input.iter().filter(|&&b| b != 0).count()
 }
 
 pub fn normalize(input: &str) -> String {
