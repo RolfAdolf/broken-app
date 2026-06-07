@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Пример сравнения бенчмарков (до/после).
-cargo bench --bench baseline > artifacts/baseline_before.txt
-# После оптимизаций запустите ещё раз и сохраните в baseline_after.txt
+mkdir -p artifacts/benches
+
+# до оптимизаций
+cargo bench --bench criterion -- --save-baseline before | tee artifacts/benches/baseline_before.txt
+
+# после оптимизаций:
+# cargo bench --bench criterion -- --baseline before | tee artifacts/benches/baseline_after.txt

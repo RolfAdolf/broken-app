@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Пример профилирования (Linux, perf). Настройте под свою систему.
-cargo build --release
-perf record -g ./target/release/demo || true
-perf report
+cargo build --release --bin demo
+sudo dtrace -x ustackframes=100 -n 'profile-997 /pid == $target/ { @[ustack()] = count(); }' -c ./target/release/demo
